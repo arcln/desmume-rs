@@ -201,4 +201,8 @@ extern "C" {
     pub fn desmume_movie_replay();
 
     pub fn desmume_movie_stop();
+
+    pub fn WAV_Begin(file_name: *const c_char, wav_mode: c_int);
+
+    pub fn WAV_End();
 }

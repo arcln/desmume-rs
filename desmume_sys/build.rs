@@ -34,7 +34,7 @@ fn main() {
     let mut cmd = Command::new("cp");
     cmd.current_dir(build_dir)
         .arg("-a")
-        .arg(&src.join("desmume/desmume/src"))
+        .arg(&src.join("../../desmume/desmume/src"))
         .arg(build_dir);
     run(&mut cmd, "cp");
 
@@ -150,8 +150,8 @@ fn main() {
         let mut cmd = Command::new("cp");
         cmd.current_dir(build_dir)
             .arg("-r")
-            .arg(&build_dir.join("src/frontend/interface/build/libdesmume.a"))
-            .arg(&build_dir.join("src/frontend/interface/build/libdesmume.a.p"))
+            .arg(&build_dir.join("src/frontend/interface/build/libdesmume.dylib"))
+            .arg(&build_dir.join("src/frontend/interface/build/libdesmume.dylib.p"))
             .arg(&dst);
         run(&mut cmd, "cp");
 

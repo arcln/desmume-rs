@@ -267,6 +267,20 @@ impl DeSmuME {
     pub fn gpu_set_layer_sub_enable_state(&self, layer_index: u8, state: bool) {
         unsafe { desmume_gpu_set_layer_sub_enable_state(layer_index as c_int, state as c_bool) }
     }
+
+    pub fn wav_begin(file_name: &str) -> Result<(), DeSmuMEError> {
+        unsafe {
+            WAV_Begin(CString::new(file_name)?.as_ptr(), 0);
+        }
+
+        Ok(())
+    }
+
+    pub fn wav_end() {
+        unsafe {
+            WAV_End();
+        }
+    }
 }
 
 impl Drop for DeSmuME {
